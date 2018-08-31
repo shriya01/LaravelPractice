@@ -14,3 +14,7 @@
 
 Route::get('googlemap', 'MapController@map');
 Route::get('googlemap/direction', 'MapController@direction');
+
+//DataTable Routes
+Route::get('my-datatables', 'MyDatatablesController@index');
+Route::get('get-data-my-datatables', ['as'=>'get.data','uses'=>'MyDatatablesController@getData']);
