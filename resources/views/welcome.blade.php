@@ -86,6 +86,7 @@
                     <a href="{{ url('googlemap') }}">Map</a>
                     <a href="{{ url('googlemap/direction') }}">Direction</a>
                     <a href="{{ url('my-datatables') }}">DataTable</a>
+                    <a href="{{ url('file-upload') }}">File Upload</a>
                 </div>
             </div>
         </div>

@@ -16,3 +16,4 @@ config/googlemaps.php
 composer.json
 composer.lock
 /public/libs
+/public/files
