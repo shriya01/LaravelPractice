@@ -25,3 +25,6 @@ Route::get('get-data-my-datatables', ['as'=>'get.data','uses'=>'MyDatatablesCont
 //Progress Bar Upload Routes
 Route::get('file-upload', 'FileController@fileUpload');
 Route::post('file-upload', 'FileController@fileUploadPost')->name('fileUploadPost');
+
+//JQuery Form Validation Demo Routes
+Route::resource('forms','FormController');
