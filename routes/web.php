@@ -28,3 +28,10 @@ Route::post('file-upload', 'FileController@fileUploadPost')->name('fileUploadPos
 
 //JQuery Form Validation Demo Routes
 Route::resource('forms','FormController');
+
+//export to excel
+Route::get('importExport', 'MaatwebsiteDemoController@importExport');
+
+Route::get('downloadExcel/{type}', 'MaatwebsiteDemoController@downloadExcel');
+
+Route::post('importExcel', 'MaatwebsiteDemoController@importExcel');
