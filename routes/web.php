@@ -36,7 +36,7 @@ Route::get('downloadExcel/{type}', 'MaatwebsiteDemoController@downloadExcel');
 
 Route::post('importExcel', 'MaatwebsiteDemoController@importExcel');
 Auth::routes();
-
+Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('sendbasicemail','MailController@basic_email');
