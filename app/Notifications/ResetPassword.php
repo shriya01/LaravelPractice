@@ -10,13 +10,15 @@ use Illuminate\Notifications\Messages\MailMessage;
 class ResetPassword extends Notification
 {
     use Queueable;
+
     public $token;
+
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-   public function __construct($token)
+    public function __construct($token)
     {
         $this->token = $token;
     }
@@ -46,7 +48,6 @@ class ResetPassword extends Notification
             ->action('Reset Password', url('password/reset', $this->token))
             ->line('If you did not request a password reset, no further action is required.');
     }
-    
 
     /**
      * Get the array representation of the notification.
@@ -57,7 +58,7 @@ class ResetPassword extends Notification
     public function toArray($notifiable)
     {
         return [
-            //
+            
         ];
     }
 }
