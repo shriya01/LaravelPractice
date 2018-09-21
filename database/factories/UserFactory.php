@@ -21,3 +21,12 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+$factory->define(App\Chirp::class, function (Faker $faker) {
+
+        return [
+            'text' => $faker->sentence(),
+            'likes_count' => $faker->randomDigitNotNull,
+            'posted_at' => $faker->dateTimeThisYear(),
+            'user_id' => random_int(1, 10)
+        ];
+    });

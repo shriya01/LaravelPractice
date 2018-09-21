@@ -42,3 +42,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('sendbasicemail','MailController@basic_email');
 Route::get('sendhtmlemail','MailController@html_email');
 Route::get('sendattachmentemail','MailController@attachment_email');
+
+//like 
+    Route::post('/chirps/{id}/act', 'HomeController@actOnChirp');
