@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Chirp;
-
+use PDF;
 class HomeController extends Controller
 {
     /**
@@ -16,19 +16,26 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-
+    /**
+     * [home description]
+     * @return [type] [description]
+     */
+    public function home()
+    {
+        return view('home');
+    }
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function chirp()
     {
         $chirps = Chirp::with('author')
             ->orderBy('id', 'desc')
             ->get();
           
-        return view('home', ['chirps' => $chirps]);
+        return view('chirp', ['chirps' => $chirps]);
     }
     /**
      * [actOnChirp description]
@@ -48,5 +55,27 @@ class HomeController extends Controller
                 break;
         }
         return '';
+    }
+    /**
+
+     * Display a listing of the resource.
+
+     *
+
+     * @return \Illuminate\Http\Response
+
+     */
+
+    public function generatePDF()
+
+    {
+
+        $data = ['title' => 'Welcome to HDTuto.com'];
+
+        $pdf = PDF::loadView('myPDF', $data);
+
+
+        return $pdf->download('hdtuto.pdf');
+
     }
 }

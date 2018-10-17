@@ -212,6 +212,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'GMaps' => FarhanWazir\GoogleMaps\Facades\GMapsFacade::class, 
         'DataTables' => Yajra\Datatables\Facades\Datatables::class,
-    'Excel' => Maatwebsite\Excel\Facades\Excel::class,    ],
+    'Excel' => Maatwebsite\Excel\Facades\Excel::class, 
+],
 
 ];

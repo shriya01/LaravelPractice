@@ -31,6 +31,7 @@
             <a href="{{ url('downloadExcel/csv') }}"><button class="btn btn-success">Download CSV</button></a>
 
  
+            <a href="{{ url('generate-pdf') }}"><button class="btn btn-success">generate PDF</button></a>
 
             <form style="border: 4px solid #a1a1a1;margin-top: 15px;padding: 10px;" action="{{ url('importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
 

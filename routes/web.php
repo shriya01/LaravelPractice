@@ -17,31 +17,32 @@ Route::get('/', function () {
 //Google Map Routes
 Route::get('googlemap', 'MapController@map');
 Route::get('googlemap/direction', 'MapController@direction');
-
 //DataTable Routes
 Route::get('my-datatables', 'MyDatatablesController@index');
 Route::get('get-data-my-datatables', ['as'=>'get.data','uses'=>'MyDatatablesController@getData']);
-
 //Progress Bar Upload Routes
 Route::get('file-upload', 'FileController@fileUpload');
 Route::post('file-upload', 'FileController@fileUploadPost')->name('fileUploadPost');
-
 //JQuery Form Validation Demo Routes
 Route::resource('forms','FormController');
-
 //export to excel
 Route::get('importExport', 'MaatwebsiteDemoController@importExport');
-
+Route::get('exportPDF', 'MaatwebsiteDemoController@exportPDF');
 Route::get('downloadExcel/{type}', 'MaatwebsiteDemoController@downloadExcel');
-
 Route::post('importExcel', 'MaatwebsiteDemoController@importExcel');
+//auth
 Auth::routes();
 Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
-Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/home', 'HomeController@home')->name('home');
+//email tutorial
 Route::get('sendbasicemail','MailController@basic_email');
 Route::get('sendhtmlemail','MailController@html_email');
 Route::get('sendattachmentemail','MailController@attachment_email');
-
 //like 
-    Route::post('/chirps/{id}/act', 'HomeController@actOnChirp');
+Route::get('/chirp', 'HomeController@chirp')->name('chirp');
+Route::post('/chirps/{id}/act', 'HomeController@actOnChirp');
+//Desktop Notification
+Route::get('post', 'PostController@create')->name('create');
+
+//PDF
+Route::get('generate-pdf','HomeController@generatePDF');

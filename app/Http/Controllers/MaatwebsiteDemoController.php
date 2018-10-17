@@ -127,5 +127,25 @@ class MaatwebsiteDemoController extends Controller
 
     }
 
+    public function exportPDF()
+    {
+
+       $data = Item::get()->toArray();
+
+       return Excel::create('itsolutionstuff_example', function($excel) use ($data) {
+
+        $excel->sheet('mySheet', function($sheet) use ($data)
+
+        {
+
+            $sheet->fromArray($data);
+
+        });
+
+       })->export("pdf");
+       
+
+    }
+
 }
 

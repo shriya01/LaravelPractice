@@ -80,14 +80,7 @@
                     Laravel
                 </div>
 
-                <div class="links">
-                    <a href="{{ url('googlemap') }}">Map Demo</a>
-                    <a href="{{ url('googlemap/direction') }}">Direction Demo</a>
-                    <a href="{{ url('my-datatables') }}">DataTable Demo</a>
-                    <a href="{{ url('file-upload') }}">File Upload Demo</a>
-                    <a href="{{ url('forms/create') }}">Jquery form validation demo</a>
-                    <a href="{{ url('importExport') }}">Excel To CSV Import/Export demo</a>
-                </div>
+               
             </div>
         </div>
     </body>
