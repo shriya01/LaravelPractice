@@ -12,3 +12,9 @@ npm-debug.log
 yarn-error.log
 .env
 .phpunit.result.cache
+config/googlemaps.php
+composer.json
+composer.lock
+/public/libs
+/public/files
+package-lock.json
